@@ -6,7 +6,7 @@ const GoogleCalendarCallback = () => {
         const fetchLoginStatus = async () => {
             const urlParams = new URLSearchParams(window.location.search);
             const code = urlParams.get('code');
-
+        
             if (code) {
                 try {
                     const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/auth/google/callback?code=${code}`);
@@ -15,12 +15,11 @@ const GoogleCalendarCallback = () => {
                         window.location.href = "/";
                     }
                 } catch (error) {
-                    console.error(error);
-                    window.alert("Failed to log in.");
+                    console.error("Error during login:", error.response ? error.response.data : error.message);
+                    window.alert("Failed to log in: " + (error.response ? error.response.data.message : error.message));
                 }
             }
         };
-
         fetchLoginStatus();
     }, []);
 
