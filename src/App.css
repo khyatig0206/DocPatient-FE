@@ -1,0 +1,25 @@
+body {
+  font-family: "Lora", serif;
+  font-weight: 400;
+  overflow: auto;           /* Allows scrolling */
+  scrollbar-width: none;    /* Hides scrollbar in Firefox */
+
+}
+
+html::-webkit-scrollbar, 
+body::-webkit-scrollbar {
+  display: none;            /* Hides scrollbar in Chrome, Safari, and Edge */
+}
+
+
+.maintext {
+  font-family: "Rouge Script", cursive;
+  font-weight: 400;
+  font-style: normal;
+
+}
+
+.icon-filter-white {
+  filter: invert(100%) brightness(94%);
+}
+
