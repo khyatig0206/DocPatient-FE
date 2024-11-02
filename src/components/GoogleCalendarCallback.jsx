@@ -9,7 +9,7 @@ const GoogleCalendarCallback = () => {
         
             if (code) {
                 try {
-                    const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/auth/google/callback?code=${code}`);
+                    const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/auth/google/callback/?code=${code}`);
                     if (response.status === 200) {
                         window.alert("Logged In Successfully");
                         window.location.href = "/";
