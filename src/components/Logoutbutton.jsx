@@ -6,8 +6,9 @@ const Logoutbutton = () => {
     const handleLogout = async () => {
         try {
             await axios.post(`${import.meta.env.VITE_BASE_URL}/logout/`);  // Adjust to your API's logout endpoint
+            localStorage.removeItem('access_token');
             alert("Logged out successfully");
-            // Redirect to login or home page
+            
             window.location.href = "/login";
         } catch (error) {
             console.error("Error logging out:", error);
