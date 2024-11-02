@@ -14,6 +14,9 @@ const GoogleCalendarCallback = () => {
                     const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/auth/google/callback/?code=${code}`);
                     if (response.status === 200) {
                         window.localStorage.setItem('access_token', response.data.access_token);
+
+                        const token = window.localStorage.getItem('access_token');
+                        console.log("Access Token:", token);
                         window.alert("Logged In Successfully");
                         window.location.href = "/";
                     }
