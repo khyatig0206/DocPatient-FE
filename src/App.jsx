@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import Homepage from './pages/Homepage';
 import Register from './pages/Registerpage';
 import Footer from './components/Footer';
+import GoogleCalendarCallback from './components/GoogleCalendarCallback'
 import Login from './pages/Loginpage'
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
@@ -14,6 +15,7 @@ function App() {
         <Route path="/" element={<Homepage />} />
         <Route path="/register" element={<Register />} />
         <Route path="/login" element={<Login />} />
+        <Route path="/auth/google/callback" element={<GoogleCalendarCallback />} /> 
       </Routes>
       <Footer />
     </div>

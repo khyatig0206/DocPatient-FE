@@ -16,10 +16,14 @@ const Login = () => {
         e.preventDefault();
         try {
             const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/login/`, credentials);
-            // Show alert on successful login
-            window.alert("Login successful!");
-            // Redirect to home page
-            window.location.href = "/";
+            
+            // Check if auth_url is returned
+            if (response.status === 200 && response.data.auth_url) {
+                // Redirect to Google auth URL
+                window.location.href = response.data.auth_url;
+            } else {
+                window.alert("Login failed. Please try again.");
+            }
         } catch (error) {
             console.error(error.response.data);
             window.alert("Login failed. Please check your username and password.");
