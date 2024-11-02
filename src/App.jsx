@@ -2,6 +2,7 @@ import Navbar from './components/Navbar';
 import Homepage from './pages/Homepage';
 import Register from './pages/Registerpage';
 import Footer from './components/Footer';
+
 import GoogleCalendarCallback from './components/GoogleCalendarCallback'
 import Login from './pages/Loginpage'
 import './App.css';

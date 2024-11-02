@@ -1,30 +1,46 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Logout from './Logoutbutton'
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
+
+  useEffect(() => {
+    // Check if access_token exists in localStorage
+    const token = window.localStorage.getItem('access_token');
+    setIsAuthenticated(!!token);
+  }, []);
 
   return (
     <nav className="flex items-center relative bg-mycolor text-white sm:p-2 md:p-4">
-      
       <Link to="/" className="flex items-center no-underline text-white">
-    <img src='/icon2.png' className='w-12 h-12 mr-2' alt="Medi Logo" />
-    <div className="text-lg md:text-xl font-bold">Medi</div>
-  </Link>
+        <img src='/icon2.png' className='w-12 h-12 mr-2' alt="Medi Logo" />
+        <div className="text-lg md:text-xl font-bold">Medi</div>
+      </Link>
+
       {/* Desktop Links */}
       <div className="hidden md:flex ml-auto space-x-4">
-      <Link to="/login">
-        <button className="bg-gray-100 text-textcolor px-4 py-2 rounded hover:bg-buttoncolor transition-transform transform hover:scale-95">
-          Login
-        </button>
-        </Link>
-        <Link to="/register">
-                <button className="bg-gray-100 text-textcolor px-4 py-2 rounded hover:bg-buttoncolor transition-transform transform hover:scale-95">
-                    Sign Up
-                </button>
+        {isAuthenticated ? (
+          <Logoutbutton />
+        ) : (
+          <>
+            <Link to="/login">
+              <button className="bg-gray-100 text-textcolor px-4 py-2 rounded hover:bg-buttoncolor transition-transform transform hover:scale-95">
+                Login
+              </button>
             </Link>
-        <button className="bg-gray-100 text-textcolor px-4 py-2 rounded hover:bg-buttoncolor transition-transform transform hover:scale-95">
-          Blogs
-        </button>
+            <Link to="/register">
+              <button className="bg-gray-100 text-textcolor px-4 py-2 rounded hover:bg-buttoncolor transition-transform transform hover:scale-95">
+                Sign Up
+              </button>
+            </Link>
+          </>
+        )}
+        <Link to="/blogs">
+          <button className="bg-gray-100 text-textcolor px-4 py-2 rounded hover:bg-buttoncolor transition-transform transform hover:scale-95">
+            Blogs
+          </button>
+        </Link>
       </div>
 
       {/* Mobile Menu Toggle */}

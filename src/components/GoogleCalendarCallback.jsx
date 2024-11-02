@@ -37,7 +37,7 @@ const GoogleCalendarCallback = () => {
                 <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-mycolor"></div>
             ) : (
                 <div>
-                    <h2 className="md:text-4xl sm:text-6xl font-bold text-textcolor maintext mb-4">Login Complete</h2></div>
+                    <h2 className="md:text-4xl sm:text-6xl font-bold text-textcolor maintext mb-4">Logging in</h2></div>
             )}
         </div>
     );
