@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
+import { Link } from 'react-router-dom';
  // Import custom CSS for animations
 
 const BlogCard = () => {
@@ -43,9 +44,11 @@ const BlogCard = () => {
       {/* Heading and View All button */}
       <div className="w-full flex justify-between items-center mb-4 px-4 mt-3 ">
         <h2 className="text-2xl font-bold text-gray-700">Recent Blog Posts</h2>
-        <button className="bg-gray-100 text-textcolor px-4 py-2 rounded hover:bg-buttoncolor transition-transform transform hover:scale-95">
+        <Link to="/blogs">
+        <button className="bg-gray-100 text-textcolor px-4 py-2 rounded hover:bg-buttoncolor transition-transform transform hover:scale-95" >
           View All
         </button>
+        </Link>
       </div>
 
       {/* Blog Cards */}
@@ -63,13 +66,15 @@ const BlogCard = () => {
               alt={post.title} 
               className="w-full h-40 object-cover"
             />
-            <div className="p-3">
-              <h2 className="text-sm font-semibold truncate">{post.title}</h2>
-              <p className="text-xs text-gray-500">By {post.author_name}</p>
-              <p className="text-xs text-gray-500">Categories: {post.categories.join(', ')}</p>
-              <p className="text-xs text-gray-800">{post.truncated_summary}</p>
-              <p className="text-xs text-gray-400">{new Date(post.created_at).toLocaleDateString()}</p>
-            </div>
+            <div className="p-2">
+                  <h2 className="text-sm font-semibold truncate">{post.title}</h2>
+                  <span className="text-xs text-gray-500">{`By ${post.author_name}`}</span>
+                  <br></br>
+                  <span className="text-xs text-gray-500">{`Categories: ${post.categories.join(', ')}`}</span>
+                  <p className="text-xs text-gray-800">{post.truncated_summary}</p>
+                  
+                  <span className="text-xs text-gray-400">{new Date(post.created_at).toLocaleDateString()}</span>
+                </div>
           </div>
         ))}
       </div>
