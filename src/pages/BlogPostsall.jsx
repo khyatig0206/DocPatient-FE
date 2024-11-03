@@ -34,6 +34,7 @@ const BlogPage = () => {
         ? prevSelected.filter((id) => id !== categoryId)
         : [...prevSelected, categoryId]
     );
+    setPage(0)
   };
 
   // Handle pagination
