@@ -23,3 +23,33 @@ body::-webkit-scrollbar {
   filter: invert(100%) brightness(94%);
 }
 
+
+
+.animate-fadeIn {
+  animation: fadeIn 0.5s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Card appearance animation */
+.animate-cardFade {
+  animation: cardFade 0.4s ease-in-out;
+}
+
+@keyframes cardFade {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
