@@ -42,7 +42,7 @@ const BlogCard = () => {
   return (
     <div className="flex flex-col items-center relative bg-buttoncolor2">
       {/* Heading and View All button */}
-      <div className="w-full flex justify-between items-center mb-4 px-4 mt-3 ">
+      <div className="w-full flex justify-between items-center mb-4 px-4 mt-4 ">
         <h2 className="text-2xl font-bold text-gray-700">Recent Blog Posts</h2>
         <Link to="/blogs">
         <button className="bg-gray-100 text-textcolor px-4 py-2 rounded hover:bg-buttoncolor transition-transform transform hover:scale-95" >
