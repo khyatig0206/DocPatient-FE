@@ -14,6 +14,7 @@ const ProfileModal = ({ isHovering }) => {
           },
         });
         setUserData(response.data);
+        console.log(userData)
       } catch (error) {
         console.error('Error fetching user data:', error);
       }
