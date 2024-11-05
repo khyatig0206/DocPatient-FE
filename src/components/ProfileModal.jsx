@@ -35,7 +35,7 @@ const ProfileModal = ({ isHovering }) => {
 
           {/* Display user details in modal */}
           <div className="text-center mb-2">
-            <img src={userData.profile.profile_picture} alt="Profile" className="w-16 h-16 rounded-full mx-auto"/>
+
             <h3 className="text-lg font-semibold">{userData.first_name} {userData.last_name}</h3>
             <p className="text-sm">{userData.is_doctor ? 'Doctor' : 'Patient'}</p>
           </div>
