@@ -128,7 +128,7 @@ const Navbar = () => {
               SignUp
             </Link>
           </div>
-
+          <ProfileModal isHovering={true} />
         </div>
           </>
         )}
