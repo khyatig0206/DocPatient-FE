@@ -8,13 +8,13 @@ const ProfileModal = ({ isHovering }) => {
     const fetchUserData = async () => {
       try {
         const userId = localStorage.getItem('user_id'); // Get user ID from local storage
+        const token = localStorage.getItem('auth_token'); // Retrieve the auth token from local storage
         const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/user-details/`, {
-          params: {
-            user_id: userId, // Pass the user_id as a query parameter
-          },
+          params: { user_id: userId },
+          
         });
         setUserData(response.data);
-        console.log(userData)
+        console.log('User Data:', response.data); // Log fetched data
       } catch (error) {
         console.error('Error fetching user data:', error);
       }
@@ -36,18 +36,21 @@ const ProfileModal = ({ isHovering }) => {
 
           {/* Display user details in modal */}
           <div className="text-center mb-2">
-
-            <h3 className="text-lg font-semibold">{userData.first_name} {userData.last_name}</h3>
+            <h3 className="text-lg font-semibold">
+              {userData.first_name} {userData.last_name}
+            </h3>
             <p className="text-sm">{userData.is_doctor ? 'Doctor' : 'Patient'}</p>
           </div>
 
           <div className="mt-2">
-            <p><strong>Address:</strong> {userData.address}, {userData.city}, {userData.state} - {userData.pincode}</p>
-            {userData.is_doctor && (
+            <p>
+              <strong>Address:</strong> {userData.address}, {userData.city}, {userData.state} - {userData.pincode}
+            </p>
+            {userData.is_doctor && userData.doctor_profile && (
               <>
                 <p><strong>Establishment:</strong> {userData.doctor_profile.establishment_name || 'N/A'}</p>
                 <p><strong>License No:</strong> {userData.doctor_profile.license_number || 'N/A'}</p>
-                <p><strong>Categories:</strong> {userData.doctor_profile.categories.map(cat => cat.name).join(', ') || 'N/A'}</p>
+                <p><strong>Categories:</strong> {userData.doctor_profile.categories.join(', ') || 'N/A'}</p>
               </>
             )}
           </div>
@@ -58,3 +61,4 @@ const ProfileModal = ({ isHovering }) => {
 };
 
 export default ProfileModal;
+
