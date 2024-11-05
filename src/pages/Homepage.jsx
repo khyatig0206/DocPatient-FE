@@ -2,6 +2,7 @@ import React from 'react';
 import TypingEffect from 'react-typing-effect';
 import homeSvg from '/home1.svg';
 import BlogCard from '../components/BlogCard'
+import ProfileModal from '../components/ProfileModal';
 
 const Homepage = () => {
   return (
