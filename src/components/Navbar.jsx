@@ -67,14 +67,14 @@ const Navbar = () => {
             <span className="text-sm md:text-md font-medium block">Welcome, {fullName}!</span>
             <div className="flex items-center justify-center">
             
-              <a
+              <button
                 className="text-white text-base underline w-full block text-center transition-transform transform hover:scale-95 inline-flex items-center cursor-pointer"
                 onClick={handleLogout}
               >
-                {/* Power-off icon before the text */}
+
                 <FontAwesomeIcon icon={faPowerOff} className="text-white mr-2" style={{ fontSize: '1rem' }} />
                 Logout
-              </a>
+              </button>
             </div>
           </div>
           <img
