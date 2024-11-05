@@ -64,21 +64,19 @@ const Navbar = () => {
           <>
           <div className="text-center px-3">
           <span className="text-sm md:text-md font-medium block">Welcome, {fullName}!</span>
-          <div className="flex items-center justify-center space-x-2">
+          <div className="flex items-center justify-center ">
             <a
               className="text-white text-base underline w-full block text-center transition-transform transform hover:scale-95"
              onClick={handleLogout}>
               <FontAwesomeIcon icon="fa-light fa-power-off" />Logout
             </a>
           </div>
-
-            <img
+          </div>
+          <img
               src={profilePicture}
               alt={fullName}
-              className="w-8 h-8 rounded-full object-cover"
+              className="w-16 h-16 rounded-full object-cover"
             />
-
-          </div>
         </>
         ) : (
           <>
