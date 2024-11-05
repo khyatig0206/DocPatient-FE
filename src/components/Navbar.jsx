@@ -4,11 +4,24 @@ import Logoutbutton from './Logoutbutton';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [fullName, setFullName] = useState('');
+  const [profilePicture, setProfilePicture] = useState('');
 
   useEffect(() => {
     // Check if access_token exists in localStorage
     const token = window.localStorage.getItem('access_token');
-    setIsAuthenticated(!!token);
+    if (token) {
+      setIsAuthenticated(true);
+
+      // Fetch full name and profile picture from localStorage
+      const storedFullName = window.localStorage.getItem('full_name');
+      const storedProfilePicture = window.localStorage.getItem('profile_picture');
+
+      // Set them in state to display
+      setFullName(storedFullName);
+      setProfilePicture(`${import.meta.env.VITE_BASE_URL}${storedProfilePicture}`);
+    }
+
   }, []);
 
   return (
@@ -21,7 +34,18 @@ const Navbar = () => {
       {/* Desktop Links */}
       <div className="hidden md:flex ml-auto space-x-4">
         {isAuthenticated ? (
+          <>
+          {/* Display user's profile picture and name */}
+          <div className="flex items-center space-x-2">
+            <img
+              src={profilePicture}
+              alt={fullName}
+              className="w-8 h-8 rounded-full object-cover"
+            />
+            <span className="text-sm md:text-md font-medium">Welcome, {fullName}!</span>
+          </div>
           <Logoutbutton />
+        </>
         ) : (
           <>
             <Link to="/login">

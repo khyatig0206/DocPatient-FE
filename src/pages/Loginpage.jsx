@@ -21,7 +21,6 @@ const Login = () => {
             if (response.status === 200 && response.data.auth_url) {
                 localStorage.setItem('full_name', response.data.full_name);
                 localStorage.setItem('profile_picture', response.data.profile_picture);
-                console.log(localStorage.getItem('profile_picture'))
                 window.location.href = response.data.auth_url;
             } else {
                 window.alert("Login failed. Please try again.");
