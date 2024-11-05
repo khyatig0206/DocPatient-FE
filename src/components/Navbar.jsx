@@ -65,9 +65,11 @@ const Navbar = () => {
           <>
           <div className="text-center px-3">
             <span className="text-sm md:text-md font-medium block">Welcome, {fullName}!</span>
-            <div className="flex items-center justify-center">
+            
+            {/* Centering the logout button with the icon */}
+            <div className="flex items-center justify-center mt-2">
               <a
-                className="text-white text-base underline w-full block text-center transition-transform transform hover:scale-95 inline-flex items-center cursor-pointer"
+                className="text-white text-base underline transition-transform transform hover:scale-95 inline-flex items-center cursor-pointer"
                 onClick={handleLogout}
               >
                 {/* Power-off icon before the text */}
@@ -76,12 +78,15 @@ const Navbar = () => {
               </a>
             </div>
           </div>
+        
+          {/* User profile picture */}
           <img
             src={profilePicture}
             alt={fullName}
-            className="w-16 h-16 rounded-full object-cover"
+            className="w-16 h-16 rounded-full object-cover mx-auto mt-3"
           />
         </>
+        
         
         ) : (
           <>
