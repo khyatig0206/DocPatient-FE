@@ -3,12 +3,22 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
 import axios from 'axios'; // Import axios
+import ProfileModal from './ProfileModal';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [fullName, setFullName] = useState('');
   const [profilePicture, setProfilePicture] = useState('');
+  const [isHovering, setIsHovering] = useState(false);
+
+  const handleMouseEnter = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+  };
 
   useEffect(() => {
     // Check if access_token exists in localStorage
@@ -26,6 +36,8 @@ const Navbar = () => {
     }
 
   }, []);
+
+
   const handleLogout = async () => {
     try {
       // Send a POST request to the logout endpoint
@@ -35,6 +47,7 @@ const Navbar = () => {
       localStorage.removeItem('access_token');
       localStorage.removeItem('full_name');
       localStorage.removeItem('profile_picture');
+      localStorage.removeItem('user_id');
 
       // Update authentication state
       setIsAuthenticated(false);
@@ -77,21 +90,22 @@ const Navbar = () => {
             
               <button
                 className="text-white text-base underline w-full block text-center transition-transform transform hover:scale-95 inline-flex items-center cursor-pointer"
-                onClick={handleLogout}
-              >
-
+                onClick={handleLogout}>
                 <FontAwesomeIcon icon={faPowerOff} className="text-white mr-2" style={{ fontSize: '1rem' }} />
                 Logout
               </button>
             </div>
           </div>
-          <img
-            src={profilePicture}
-            alt={fullName}
-            className="w-12 h-12 rounded-full object-cover"
-          />
+          <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+            <img
+              src={profilePicture}
+              alt={fullName}
+              className="w-12 h-12 rounded-full object-cover cursor-pointer"
+            />
+          <ProfileModal isHovering={isHovering} />
+          </div>
         </>
-        
+
         ) : (
           <>
           <div className="text-center px-3">
