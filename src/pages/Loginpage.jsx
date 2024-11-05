@@ -19,7 +19,9 @@ const Login = () => {
             
             // Check if auth_url is returned
             if (response.status === 200 && response.data.auth_url) {
-                // Redirect to Google auth URL
+                localStorage.setItem('full_name', response.data.full_name);
+                localStorage.setItem('profile_picture', response.data.profile_picture);
+                console.log(localStorage.getItem('profile_picture'))
                 window.location.href = response.data.auth_url;
             } else {
                 window.alert("Login failed. Please try again.");

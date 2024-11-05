@@ -7,6 +7,8 @@ const Logoutbutton = () => {
         try {
             await axios.post(`${import.meta.env.VITE_BASE_URL}/logout/`);  // Adjust to your API's logout endpoint
             localStorage.removeItem('access_token');
+            localStorage.removeItem('full_name');
+            localStorage.removeItem('profile_picture');
             alert("Logged out successfully");
             
             window.location.href = "/login";

@@ -41,6 +41,12 @@ const Navbar = () => {
             Blogs
           </button>
         </Link>
+
+        <Link to="/doctors">
+              <button className="bg-gray-100 text-textcolor px-4 py-2 rounded hover:bg-buttoncolor transition-transform transform hover:scale-95">
+                Doctors
+              </button>
+            </Link>
       </div>
 
       {/* Mobile Menu Toggle */}
@@ -79,7 +85,7 @@ const Navbar = () => {
       </div>
         {/* Links with underline and divider */}
         <a
-          href="#login"
+          href="/login"
           className="text-white underline py-2 mb-2 w-full block p-2"
           onClick={() => setIsOpen(false)}
         >

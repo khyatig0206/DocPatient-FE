@@ -6,6 +6,7 @@ import BlogPage from './pages/BlogPostsall';
 
 import GoogleCalendarCallback from './components/GoogleCalendarCallback'
 import Login from './pages/Loginpage'
+import DoctorsPage from './pages/DoctorsPage'
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 
@@ -19,6 +20,7 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="/auth/google/callback" element={<GoogleCalendarCallback />} /> 
         <Route path="/blogs" element={<BlogPage />} />
+        <Route path="/doctors" element={<DoctorsPage/>}/>
       </Routes>
       <Footer />
     </div>

@@ -51,6 +51,7 @@ const BlogPage = () => {
   };
 
   return (
+    <div className='bg-buttoncolor'>
     <div className="container py-4">
       <div className="flex">
         {/* Sidebar for Category Filter */}
@@ -114,6 +115,7 @@ const BlogPage = () => {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
