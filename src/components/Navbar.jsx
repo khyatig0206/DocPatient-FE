@@ -88,7 +88,7 @@ const Navbar = () => {
           <img
             src={profilePicture}
             alt={fullName}
-            className="w-13 h-13 rounded-full object-cover"
+            className="w-12 h-12 rounded-full object-cover"
           />
         </>
         
