@@ -7,9 +7,9 @@ const ProfileModal = ({ isHovering }) => {
   useEffect(() => {
     const fetchUserData = async () => {
       try {
-        const userId = 11
-        // const userId = localStorage.getItem('user_id'); // Get user ID from local storage
-        // const token = localStorage.getItem('auth_token'); // Retrieve the auth token from local storage
+        // const userId = 11
+        const userId = localStorage.getItem('user_id'); // Get user ID from local storage
+        const token = localStorage.getItem('auth_token'); // Retrieve the auth token from local storage
         const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/user-details/`, {
           params: { user_id: userId },
           
