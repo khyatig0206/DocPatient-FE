@@ -66,7 +66,6 @@ const Navbar = () => {
           <span className="text-sm md:text-md font-medium block">Welcome, {fullName}!</span>
           <div className="flex items-center justify-center space-x-2">
             <a
-              to="/login"
               className="text-white text-base underline w-full block text-center transition-transform transform hover:scale-95"
              onClick={handleLogout}>
               <FontAwesomeIcon icon="fa-light fa-power-off" />Logout
