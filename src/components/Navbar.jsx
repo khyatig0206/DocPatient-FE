@@ -2,6 +2,7 @@ import React, { useState,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
+import axios from 'axios'; // Import axios
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,20 +26,26 @@ const Navbar = () => {
     }
 
   }, []);
-    const handleLogout = async () => {
-      try {
-          await axios.post(`${import.meta.env.VITE_BASE_URL}/logout/`);  // Adjust to your API's logout endpoint
-          localStorage.removeItem('access_token');
-          localStorage.removeItem('full_name');
-          localStorage.removeItem('profile_picture');
-          setIsAuthenticated(false);
-          alert("Logged out successfully");
-          
-          window.location.href = "/login";
-      } catch (error) {
-          console.error("Error logging out:", error);
-      }
-    };
+  const handleLogout = async () => {
+    try {
+      // Send a POST request to the logout endpoint
+      await axios.post(`${import.meta.env.VITE_BASE_URL}/logout/`); // Adjust to your API's logout endpoint
+      
+      // Remove local storage items
+      localStorage.removeItem('access_token');
+      localStorage.removeItem('full_name');
+      localStorage.removeItem('profile_picture');
+
+      // Update authentication state
+      setIsAuthenticated(false);
+
+      // Alert the user and redirect to login page
+      alert('Logged out successfully');
+      window.location.href = '/login';
+    } catch (error) {
+      console.error('Error logging out:', error);
+    }
+  };
   return (
     <nav className="flex items-center relative bg-mycolor text-white sm:p-2 md:p-4">
       <Link to="/" className="flex items-center no-underline text-white">
