@@ -63,21 +63,29 @@ const Navbar = () => {
       {isAuthenticated ? (
           <>
           <div className="text-center px-3">
-          <span className="text-sm md:text-md font-medium block">Welcome, {fullName}!</span>
-          <div className="flex items-center justify-center ">
-            <a
-              className="text-white text-base underline w-full block text-center transition-transform transform hover:scale-95"
-             onClick={handleLogout}>
-              <FontAwesomeIcon icon="fa-light fa-power-off" />Logout
-            </a>
-          </div>
+            <span className="text-sm md:text-md font-medium block">Welcome, {fullName}!</span>
+            <div className="flex items-center justify-center">
+              <a
+                className="text-white text-base underline w-full block text-center transition-transform transform hover:scale-95 inline-flex items-center"
+                onClick={handleLogout}
+              >
+                {/* Power-off icon before the text */}
+                <FontAwesomeIcon
+                  icon="fa-light fa-power-off"
+                  className="text-white mr-2"  // Add margin-right for spacing
+                  style={{ fontSize: '1rem' }} // Adjust icon size to match text size
+                />
+                Logout
+              </a>
+            </div>
           </div>
           <img
-              src={profilePicture}
-              alt={fullName}
-              className="w-16 h-16 rounded-full object-cover"
-            />
+            src={profilePicture}
+            alt={fullName}
+            className="w-16 h-16 rounded-full object-cover"
+          />
         </>
+        
         ) : (
           <>
           <div className="text-center px-3">
