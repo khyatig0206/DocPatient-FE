@@ -71,7 +71,7 @@ const Navbar = () => {
 
       {isAuthenticated ? (
           <>
-          <div className="text-center px-2">
+          <div className="text-center px-3">
             <span className="text-sm md:text-md font-medium block">Welcome, {fullName}!</span>
             <div className="flex items-center justify-center">
             
