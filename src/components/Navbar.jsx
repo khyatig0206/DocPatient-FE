@@ -1,7 +1,8 @@
 import React, { useState,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import Logoutbutton from './Logoutbutton';
+import { faPowerOff } from '@fortawesome/free-solid-svg-icons';
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
@@ -70,11 +71,7 @@ const Navbar = () => {
                 onClick={handleLogout}
               >
                 {/* Power-off icon before the text */}
-                <FontAwesomeIcon
-                  icon="fa-light fa-power-off"
-                  className="text-white mr-2"  // Add margin-right for spacing
-                  style={{ fontSize: '1rem' }} // Adjust icon size to match text size
-                />
+                <FontAwesomeIcon icon={faPowerOff} className="text-white mr-2" style={{ fontSize: '1rem' }} />
                 Logout
               </a>
             </div>
@@ -96,6 +93,7 @@ const Navbar = () => {
               to="/login"
               className="text-white text-base underline w-full block text-center transition-transform transform hover:scale-95"
             >
+              
               LogIn
             </Link>
              <span>|</span>
