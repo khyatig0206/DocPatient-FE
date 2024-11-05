@@ -103,6 +103,7 @@ const Navbar = () => {
               className="w-12 h-12 rounded-full object-cover cursor-pointer"
             />
           <ProfileModal isHovering={isHovering} />
+          
           </div>
         </>
 
@@ -127,6 +128,7 @@ const Navbar = () => {
               SignUp
             </Link>
           </div>
+
         </div>
           </>
         )}

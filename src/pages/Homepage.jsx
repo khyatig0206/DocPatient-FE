@@ -9,6 +9,7 @@ const Homepage = () => {
     <>
     <div className="flex flex-col-reverse lg:flex-row items-center justify-between px-8 mt-4">
       <div className="text-center w-full lg:w-1/2 sm:items-centre p-8">
+      {/* <ProfileModal isHovering={true} /> */}
         <h2 className="md:text-8xl sm:text-6xl font-bold text-textcolor maintext mb-4">Welcome to Medi</h2>
         <TypingEffect
           text={["Your trusted health companion."]}

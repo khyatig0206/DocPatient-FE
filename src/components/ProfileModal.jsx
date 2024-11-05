@@ -27,12 +27,12 @@ const ProfileModal = ({ isHovering }) => {
   return (
     <div className="relative">
       {isHovering && (
-        <div className="absolute w-64 bg-white border border-gray-300 shadow-lg rounded-lg p-4 top-16 right-0">
+        <div className="absolute w-64 bg-white border border-gray-300 shadow-lg rounded-lg p-4 top-9 right-0">
           {/* Triangle pointing to profile picture */}
           <div
             className="absolute -top-4 right-8 arrow-up "
             
-        ><div className='relative -top-1 right-6 triangle-shadow'></div> </div>
+        ><div className='relative -top-0 right-6 triangle-shadow'></div> </div>
 
           {/* Display user details in modal */}
           <div className="text-center mb-2">
