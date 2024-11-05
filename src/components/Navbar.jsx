@@ -1,5 +1,6 @@
 import React, { useState,useEffect } from 'react';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import Logoutbutton from './Logoutbutton';
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -61,34 +62,46 @@ const Navbar = () => {
 
       {isAuthenticated ? (
           <>
-          {/* Display user's profile picture and name */}
-          <div className="flex items-center space-x-2">
+          <div className="text-center px-3">
+          <span className="text-sm md:text-md font-medium block">Welcome, {fullName}!</span>
+          <div className="flex items-center justify-center space-x-2">
+            <a
+              to="/login"
+              className="text-white text-base underline w-full block text-center transition-transform transform hover:scale-95"
+             onClick={handleLogout}>
+              <FontAwesomeIcon icon="fa-light fa-power-off" />Logout
+            </a>
+          </div>
+
             <img
               src={profilePicture}
               alt={fullName}
               className="w-8 h-8 rounded-full object-cover"
             />
-            <span className="text-sm md:text-md font-medium">Welcome, {fullName}!</span>
+
           </div>
-          <a
-          className="text-white underline py-2 mb-2 w-full block p-2"
-          onClick={handleLogout}
-          >
-          Logout
-          </a>
         </>
         ) : (
           <>
-            <Link to="/login">
-              <button className="bg-gray-100 text-textcolor px-4 py-2 rounded hover:bg-buttoncolor transition-transform transform hover:scale-95">
-                Login
-              </button>
+          <div className="text-center px-3">
+          <span className="text-sm md:text-md font-medium block">Welcome!</span>
+
+          <div className="flex items-center justify-center space-x-2">
+            <Link
+              to="/login"
+              className="text-white text-base underline w-full block text-center transition-transform transform hover:scale-95"
+            >
+              LogIn
             </Link>
-            <Link to="/register">
-              <button className="bg-gray-100 text-textcolor px-4 py-2 rounded hover:bg-buttoncolor transition-transform transform hover:scale-95">
-                Sign Up
-              </button>
+             <span>|</span>
+            <Link
+              to="/register"
+              className="text-white text-base underline w-full block text-center transition-transform transform hover:scale-95"
+            >
+              SignUp
             </Link>
+          </div>
+        </div>
           </>
         )}
 
