@@ -31,6 +31,7 @@ const Navbar = () => {
           localStorage.removeItem('access_token');
           localStorage.removeItem('full_name');
           localStorage.removeItem('profile_picture');
+          setIsAuthenticated(false);
           alert("Logged out successfully");
           
           window.location.href = "/login";
