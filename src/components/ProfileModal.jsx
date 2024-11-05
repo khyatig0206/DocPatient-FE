@@ -41,7 +41,7 @@ const ProfileModal = ({ isHovering }) => {
           </div>
 
           <div className="mt-2">
-            <p><strong>Address:</strong> {userData.profile.address}, {userData.profile.city}, {userData.profile.state} - {userData.profile.pincode}</p>
+            <p><strong>Address:</strong> {userData.address}, {userData.city}, {userData.state} - {userData.pincode}</p>
             {userData.is_doctor && (
               <>
                 <p><strong>Establishment:</strong> {userData.doctor_profile.establishment_name || 'N/A'}</p>
