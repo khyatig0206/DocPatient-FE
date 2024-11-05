@@ -23,7 +23,19 @@ const Navbar = () => {
     }
 
   }, []);
-
+    const handleLogout = async () => {
+      try {
+          await axios.post(`${import.meta.env.VITE_BASE_URL}/logout/`);  // Adjust to your API's logout endpoint
+          localStorage.removeItem('access_token');
+          localStorage.removeItem('full_name');
+          localStorage.removeItem('profile_picture');
+          alert("Logged out successfully");
+          
+          window.location.href = "/login";
+      } catch (error) {
+          console.error("Error logging out:", error);
+      }
+    };
   return (
     <nav className="flex items-center relative bg-mycolor text-white sm:p-2 md:p-4">
       <Link to="/" className="flex items-center no-underline text-white">
@@ -33,7 +45,21 @@ const Navbar = () => {
 
       {/* Desktop Links */}
       <div className="hidden md:flex ml-auto space-x-4">
-        {isAuthenticated ? (
+        
+        <Link to="/blogs">
+          <button className="bg-gray-100 text-textcolor px-4 py-2 rounded hover:bg-buttoncolor transition-transform transform hover:scale-95">
+            Blogs
+          </button>
+        </Link>
+
+        <Link to="/doctors">
+              <button className="bg-gray-100 text-textcolor px-4 py-2 rounded hover:bg-buttoncolor transition-transform transform hover:scale-95">
+                Doctors
+              </button>
+            </Link>
+      </div>
+
+      {isAuthenticated ? (
           <>
           {/* Display user's profile picture and name */}
           <div className="flex items-center space-x-2">
@@ -44,7 +70,12 @@ const Navbar = () => {
             />
             <span className="text-sm md:text-md font-medium">Welcome, {fullName}!</span>
           </div>
-          <Logoutbutton />
+          <a
+          className="text-white underline py-2 mb-2 w-full block p-2"
+          onClick={handleLogout}
+          >
+          Logout
+          </a>
         </>
         ) : (
           <>
@@ -60,18 +91,6 @@ const Navbar = () => {
             </Link>
           </>
         )}
-        <Link to="/blogs">
-          <button className="bg-gray-100 text-textcolor px-4 py-2 rounded hover:bg-buttoncolor transition-transform transform hover:scale-95">
-            Blogs
-          </button>
-        </Link>
-
-        <Link to="/doctors">
-              <button className="bg-gray-100 text-textcolor px-4 py-2 rounded hover:bg-buttoncolor transition-transform transform hover:scale-95">
-                Doctors
-              </button>
-            </Link>
-      </div>
 
       {/* Mobile Menu Toggle */}
       <button
