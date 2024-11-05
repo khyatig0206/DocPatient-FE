@@ -71,7 +71,7 @@ const Navbar = () => {
 
       {isAuthenticated ? (
           <>
-          <div className="text-center px-3">
+          <div className="text-center px-2">
             <span className="text-sm md:text-md font-medium block">Welcome, {fullName}!</span>
             <div className="flex items-center justify-center">
             
@@ -88,7 +88,7 @@ const Navbar = () => {
           <img
             src={profilePicture}
             alt={fullName}
-            className="w-16 h-16 rounded-full object-cover"
+            className="w-14 h-14 rounded-full object-cover"
           />
         </>
         
