@@ -4,40 +4,24 @@ import axios from 'axios';
 const ProfileModal = ({ isHovering }) => {
   const [userData, setUserData] = useState(null);
 
-//   useEffect(() => {
-//     const fetchUserData = async () => {
-//       try {
-//         const userId = localStorage.getItem('user_id'); // Get user ID from local storage
-//         const token = localStorage.getItem('auth_token'); // Retrieve the auth token from local storage
-//         const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/user-details/`, {
-//           params: { user_id: userId },
+  useEffect(() => {
+    const fetchUserData = async () => {
+      try {
+        const userId = localStorage.getItem('user_id'); // Get user ID from local storage
+        const token = localStorage.getItem('auth_token'); // Retrieve the auth token from local storage
+        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/user-details/`, {
+          params: { user_id: userId },
           
-//         });
-//         setUserData(response.data);
-//         console.log('User Data:', response.data); // Log fetched data
-//       } catch (error) {
-//         console.error('Error fetching user data:', error);
-//       }
-//     };
+        });
+        setUserData(response.data);
+        console.log('User Data:', response.data); // Log fetched data
+      } catch (error) {
+        console.error('Error fetching user data:', error);
+      }
+    };
 
-//     fetchUserData();
-
-//   }, []);
-
-    setUserData({
-        first_name: "Khyati",
-        last_name: "Gupta",
-        is_doctor: true,
-        address: "Navab Gate, mala road, Indra colony, near Hanuman Mandir, Rampur, Uttar Pradesh",
-        city: "Rampur",
-        state: "Uttar Pradesh",
-        pincode: 244901,
-        doctor_profile: {
-        establishment_name: "Khyati Clinic",
-        license_number: "123456",
-        categories: ["Cardiology", "Dentist"]
-        }
-    });
+    fetchUserData();
+  }, []);
 
   return (
     <div className="relative">
