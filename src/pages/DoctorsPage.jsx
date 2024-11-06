@@ -76,7 +76,7 @@ const DoctorsPage = () => {
         />
         <button
           type="submit"
-          className="bg-mycolor shadow-md text-white md:text-base sm:text-sm px-4 py-2 rounded hover:bg-buttoncolor2 transition-transform transform hover:scale-95 z-10 ">
+          className="bg-mycolor shadow-md text-white md:text-base sm:text-sm px-4 py-2 rounded hover:bg-buttoncolor2 transition-transform transform hover:scale-95 z-19 ">
           Search
         </button>
       </form>
