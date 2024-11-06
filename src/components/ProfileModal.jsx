@@ -35,10 +35,10 @@ const ProfileModal = ({ isHovering }) => {
 
           {/* Display user details in modal */}
           <div className="text-center text-black mb-2">
-            <p className="inline-block text-xs font-semibold text-white mb-1 px-2 py-1 rounded-lg bg-buttoncolor2">
+            <p className="text-xs font-semibold text-white mb-1 px-2 py-1 rounded-full bg-buttoncolor2">
               {userData.is_doctor ? 'Doctor' : 'Patient'}
             </p>
-            <h3 className="inline-block text-lg font-bold text-white mt-1 px-3 py-1 rounded-lg bg-mycolor">
+            <h3 className="text-lg font-bold text-white mt-1 px-3 py-1 rounded-full bg-mycolor">
               {userData.first_name} {userData.last_name}
             </h3>
           </div>
