@@ -52,10 +52,10 @@ const PatientAppointments = () => {
             <div key={`${appointment.date}-${appointment.start_time}`}>
               {/* Doctor's profile picture */}
               <div className="flex items-center mb-1">
-                <img
-                  src={`${import.meta.env.VITE_BASE_URL}${appointment.doctor_profile}`}
-                  alt="Profile"
-                  className="w-24 h-24 rounded-full object-cover mr-4"
+              <img
+                src={`${import.meta.env.VITE_BASE_URL}${isPatient ? appointment.doctor_profile : appointment.patient_profile}`}
+                alt={isPatient ? "Doctor Profile" : "Patient Profile"}
+                className="w-24 h-24 rounded-full object-cover mr-4"
                 />
                 <div>
                   <h3 className="text-lg font-semibold text-mycolor">
