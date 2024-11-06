@@ -24,7 +24,7 @@ const AppointmentBookingPage = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(''); // Clear previous errors
+    setError('');
   
     const now = new Date();
     const selectedDate = new Date(appointmentData.date);
@@ -41,26 +41,29 @@ const AppointmentBookingPage = () => {
     }
   
     try {
-      // Retrieve the access token from localStorage
-      const token = window.localStorage.getItem('access_token');
-      if (!token) {
-        alert('No access token found. Please log in via Google.');
-        return;
-      }
+
+      const userId = window.localStorage.getItem('user_id');
+
+      const appointmentRequestData = {
+        ...appointmentData,
+        user_id: userId 
+      };
   
       // Make the request with the access token in the headers
       const response = await axios.post(
         `${import.meta.env.VITE_BASE_URL}/book-appointment/`,
-        appointmentData
+        appointmentRequestData,
+        
       );
   
       alert('Appointment booked successfully!');
-      navigate('/'); // Redirect to appointments page (or wherever)
+      navigate('/'); // Redirect to home page (or any other page)
     } catch (error) {
       console.error(error);
       alert('Failed to book appointment');
     }
   };
+  
 
   return (
     <div className="bg-buttoncolor">
