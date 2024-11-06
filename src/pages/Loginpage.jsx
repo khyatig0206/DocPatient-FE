@@ -22,6 +22,7 @@ const Login = () => {
                 localStorage.setItem('full_name', response.data.full_name);
                 localStorage.setItem('profile_picture', response.data.profile_picture);
                 localStorage.setItem('user_id', response.data.user_id);
+                localStorage.setItem('is_patient', response.data.is_patient);
                 window.location.href = response.data.auth_url;
             } else {
                 window.alert("Login failed. Please try again.");
