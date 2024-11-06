@@ -7,7 +7,7 @@ const AppointmentBookingPage = () => {
   const navigate = useNavigate();
   const [error, setError] = useState('');
   const [appointmentData, setAppointmentData] = useState({
-    doctor: doctorId,
+    doctor_id: doctorId,
     date: '',
     start_time: '',
     end_time: '',
