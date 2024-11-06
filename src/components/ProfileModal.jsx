@@ -45,6 +45,9 @@ const ProfileModal = ({ isHovering }) => {
           </div>
 
           <div className="mt-2 text-left text-gray-700 text-sm space-y-2">
+          <div>
+              <strong>Username:</strong> {userData.username}
+            </div>
             <div>
               <strong>Email:</strong> {userData.email}
             </div>
