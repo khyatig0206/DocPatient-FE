@@ -12,14 +12,6 @@ const Navbar = () => {
   const [profilePicture, setProfilePicture] = useState('');
   const [isHovering, setIsHovering] = useState(false);
 
-  const [isPatient, setIsPatient] = useState(false);
-
-    useEffect(() => {
-      // Retrieve the 'is_patient' value from localStorage
-      const isPatientValue = localStorage.getItem('is_patient');
-      // Convert the string value to a boolean (true/false)
-      setIsPatient(isPatientValue === 'true');
-    }, []);
 
   const handleMouseEnter = () => {
     setIsHovering(true);
@@ -80,13 +72,13 @@ const Navbar = () => {
       {/* Desktop Links */}
       <div className="hidden md:flex ml-auto space-x-4">
 
-      {isPatient && (
+
         <Link to="/appointments">
           <button className="bg-gray-100 text-textcolor px-4 py-2 rounded hover:bg-buttoncolor transition-transform transform hover:scale-95">
             Appointments
           </button>
         </Link>
-      )}
+
 
         <Link to="/blogs">
           <button className="bg-gray-100 text-textcolor px-4 py-2 rounded hover:bg-buttoncolor transition-transform transform hover:scale-95">
