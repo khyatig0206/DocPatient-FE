@@ -100,7 +100,7 @@ const Navbar = () => {
             <img
               src={profilePicture}
               alt={fullName}
-              className="w-12 h-12 rounded-full object-cover cursor-pointer mr-4"
+              className={`w-12 h-12 rounded-full object-cover cursor-pointer mr-4 ${isHovering ? 'shadow-lg shadow-gray-400' : ''}`}
             />
           <ProfileModal isHovering={isHovering} />
           
