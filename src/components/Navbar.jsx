@@ -104,7 +104,7 @@ const Navbar = () => {
               alt={fullName}
               className={`w-12 h-12 rounded-full object-cover cursor-pointer mr-4 profileimg`}
             />
-          <ProfileModal isHovering={isHovering} className='z-1000'/>
+          <ProfileModal isHovering={isHovering} className='z-50'/>
           
           </div>
         </>
