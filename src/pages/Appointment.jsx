@@ -4,6 +4,7 @@ import axios from 'axios';
 
 const AppointmentBookingPage = () => {
   const { doctorId } = useParams(); // Get doctorId from the URL
+  const token = window.localStorage.getItem('access_token');
   const navigate = useNavigate();
   const [error, setError] = useState('');
   const [appointmentData, setAppointmentData] = useState({
@@ -11,6 +12,7 @@ const AppointmentBookingPage = () => {
     date: '',
     start_time: '',
     end_time: '',
+    access_token: token
   });
 
   const handleChange = (e) => {
@@ -49,12 +51,7 @@ const AppointmentBookingPage = () => {
       // Make the request with the access token in the headers
       const response = await axios.post(
         `${import.meta.env.VITE_BASE_URL}/book-appointment/`,
-        appointmentData,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`, // Pass token in headers
-          },
-        }
+        appointmentData
       );
   
       alert('Appointment booked successfully!');
