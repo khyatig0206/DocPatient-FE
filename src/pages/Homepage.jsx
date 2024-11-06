@@ -2,7 +2,7 @@ import React from 'react';
 import TypingEffect from 'react-typing-effect';
 import homeSvg from '/home1.svg';
 import BlogCard from '../components/BlogCard'
-
+import { Link } from 'react-router-dom';
 
 const Homepage = () => {
   return (
@@ -19,9 +19,11 @@ const Homepage = () => {
           typingDelay={500}
           className="md:text-lg sm:text-sm text-gray-600 mb-6"
         /><div>
+          <Link to='/doctors'>
         <button className="bg-mycolor text-white md:text-lg sm:text-sm px-4 py-2 rounded mt-4 hover:bg-buttoncolor2 transition-transform transform hover:scale-95">
           Book Your Appointment 
         </button>
+        </Link>
         </div>
       </div>
       <div className="w-full lg:w-1/2 mt-8 mb-3">
