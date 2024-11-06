@@ -72,7 +72,6 @@ const Navbar = () => {
       {/* Desktop Links */}
       <div className="hidden md:flex ml-auto space-x-4">
 
-
         <Link to="/appointments">
           <button className="bg-gray-100 text-textcolor px-4 py-2 rounded hover:bg-buttoncolor transition-transform transform hover:scale-95">
             Appointments
