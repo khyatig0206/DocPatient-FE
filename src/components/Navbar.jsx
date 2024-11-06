@@ -64,7 +64,9 @@ const Navbar = () => {
       <Link to="/" className="flex items-center no-underline text-white">
         <img src='/icon2.png' className='w-12 h-12 mr-2 ml-4' alt="Medi Logo" />
         <div className="text-lg md:text-xl font-bold">Medi</div>
+        
       </Link>
+
 
       {/* Desktop Links */}
       <div className="hidden md:flex ml-auto space-x-4">
@@ -100,7 +102,7 @@ const Navbar = () => {
             <img
               src={profilePicture}
               alt={fullName}
-              className={`w-12 h-12 rounded-full object-cover cursor-pointer mr-4  ${isHovering ? 'border-4 border-transparent hover-border-blur' : ''}`}
+              className={`w-12 h-12 rounded-full object-cover cursor-pointer mr-4 profileimg`}
             />
           <ProfileModal isHovering={isHovering} />
           
