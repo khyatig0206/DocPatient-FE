@@ -48,22 +48,26 @@ const ProfileModal = ({ isHovering }) => {
             <div>
               <strong>Email:</strong> {userData.email}
             </div>
-            <div>
-              <strong>Address:</strong> {userData.address}, {userData.city}, {userData.state} - {userData.pincode}
-            </div>
+
             {userData.is_doctor && userData.doctor_profile && (
               <>
+              <div>
+                  <strong>Categories:</strong> {userData.doctor_profile.categories.join(', ') || 'N/A'}
+                </div>
                 <div>
                   <strong>Establishment:</strong> {userData.doctor_profile.establishment_name || 'N/A'}
                 </div>
                 <div>
                   <strong>License No:</strong> {userData.doctor_profile.license_number || 'N/A'}
                 </div>
-                <div>
-                  <strong>Categories:</strong> {userData.doctor_profile.categories.join(', ') || 'N/A'}
-                </div>
+                
               </>
             )}
+
+            <div>
+              <strong>Address:</strong> {userData.address}, {userData.city}, {userData.state} - {userData.pincode}
+            </div>
+            
           </div>
         </div>
       )}
