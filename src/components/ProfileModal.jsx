@@ -25,7 +25,7 @@ const ProfileModal = ({ isHovering }) => {
   }, []);
 
   return (
-    <div className="relative">
+    <div className="relative z-50">
       {isHovering && (
         <div className="absolute w-64 bg-white border border-gray-300 shadow-lg rounded-lg p-4 top-9 right-0">
           {/* Triangle pointing to profile picture */}
