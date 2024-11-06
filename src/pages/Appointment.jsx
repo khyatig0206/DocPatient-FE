@@ -23,12 +23,11 @@ const AppointmentBookingPage = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError(''); // Clear previous errors
-
-    // Get the current date and time
+  
     const now = new Date();
     const selectedDate = new Date(appointmentData.date);
     const selectedTime = new Date(`${appointmentData.date}T${appointmentData.start_time}`);
-
+  
     // Validate if the selected date and time are in the future
     if (selectedDate < now.setHours(0, 0, 0, 0)) {
       setError('The appointment date cannot be in the past.');
@@ -38,9 +37,26 @@ const AppointmentBookingPage = () => {
       setError('The appointment start time must be greater than the current time.');
       return;
     }
-
+  
     try {
-      const response = await axios.post(`${import.meta.env.VITE_BASE_URL}/book-appointment/`, appointmentData);
+      // Retrieve the access token from localStorage
+      const token = window.localStorage.getItem('access_token');
+      if (!token) {
+        alert('No access token found. Please log in via Google.');
+        return;
+      }
+  
+      // Make the request with the access token in the headers
+      const response = await axios.post(
+        `${import.meta.env.VITE_BASE_URL}/book-appointment/`,
+        appointmentData,
+        {
+          headers: {
+            Authorization: `Bearer ${token}`, // Pass token in headers
+          },
+        }
+      );
+  
       alert('Appointment booked successfully!');
       navigate('/'); // Redirect to appointments page (or wherever)
     } catch (error) {
