@@ -15,8 +15,11 @@ const PatientAppointments = () => {
       try {
         // const userId = 13
         const userId = window.localStorage.getItem('user_id');
-        const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/appointments/?user_id=${userId}`);
+        const endpoint = isPatientStored 
+          ? `${import.meta.env.VITE_BASE_URL}/appointments/?user_id=${userId}` 
+          : `${import.meta.env.VITE_BASE_URL}/doc-appointments/?user_id=${userId}`;
 
+        const response = await axios.get(endpoint);
         setAppointments(response.data);
       } catch (err) {
         console.error('Error fetching appointments:', err);
