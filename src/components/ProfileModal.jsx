@@ -45,28 +45,28 @@ const ProfileModal = ({ isHovering }) => {
           </div>
 
           <div className="mt-2 text-left text-xs space-y-2">
-        <div className="px-1 py-1 rounded-lg bg-buttoncolor text-mycolor">
+        <div className="px-2 py-1 rounded-lg bg-buttoncolor text-mycolor">
           <strong>Username:</strong> {userData.username}
         </div>
-        <div className="px-1 py-1 rounded-lg bg-buttoncolor text-mycolor">
+        <div className="px-2 py-1 rounded-lg bg-buttoncolor text-mycolor">
           <strong>Email:</strong> {userData.email}
         </div>
 
         {userData.is_doctor && userData.doctor_profile && (
           <>
-            <div className="px-1 py-1 rounded-lg bg-buttoncolor text-mycolor">
+            <div className="px-2 py-1 rounded-lg bg-buttoncolor text-mycolor">
               <strong>Categories:</strong> {userData.doctor_profile.categories.join(', ') || 'N/A'}
             </div>
-            <div className="px-1 py-1 rounded-lg bg-buttoncolor text-mycolor">
+            <div className="px-2 py-1 rounded-lg bg-buttoncolor text-mycolor">
               <strong>Establishment:</strong> {userData.doctor_profile.establishment_name || 'N/A'}
             </div>
-            <div className="px-1 py-1 rounded-lg bg-buttoncolor text-mycolor">
+            <div className="px-2 py-1 rounded-lg bg-buttoncolor text-mycolor">
               <strong>License No:</strong> {userData.doctor_profile.license_number || 'N/A'}
             </div>
           </>
         )}
 
-        <div className="px-1 py-1 rounded-lg bg-buttoncolor text-mycolor">
+        <div className="px-2 py-1 rounded-lg bg-buttoncolor text-mycolor">
           <strong>Address:</strong> {userData.address}, {userData.city}, {userData.state} - {userData.pincode}
         </div>
       </div>
