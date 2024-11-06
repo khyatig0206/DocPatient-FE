@@ -77,7 +77,7 @@ const BlogPage = () => {
         <div className="w-4/5 pl-4">
           <div className="grid gap-3 pb-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {posts.map((post) => (
-              <div key={post.id} className="bg-white shadow-md rounded-md overflow-hidden transition-transform transform cursor-pointer hover:scale-95 duration-300">
+              <div key={post.id} className="bg-white shadow-md rounded-md overflow-hidden transition-transform transform cursor-pointer hover:scale-95 duration-300 Z-10">
                 <img 
                   src={`${import.meta.env.VITE_BASE_URL}${post.image}`} 
                   alt={post.title} 
