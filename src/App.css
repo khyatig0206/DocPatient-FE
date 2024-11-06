@@ -80,18 +80,23 @@ body::-webkit-scrollbar {
 
 .hover-border-blur {
   position: relative;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 .hover-border-blur:hover::before {
   content: '';
   position: absolute;
-  top: -6px;
-  left: -6px;
-  right: -6px;
-  bottom: -6px;
+  top: -8px;     /* Move the border further outside */
+  left: -8px;    /* Move the border further outside */
+  right: -8px;   /* Move the border further outside */
+  bottom: -8px;  /* Move the border further outside */
   border-radius: 50%;
   backdrop-filter: blur(6px);
-  z-index: -1;
-  border: 2px solid rgba(255, 255, 255, 0.6);
+  z-index: 0;    /* Keep the border behind the image */
+  border: 3px solid rgba(255, 255, 255, 0.6); /* Slightly thicker border */
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);    /* Optional: Add some shadow for more emphasis */
+}
+
+.hover-border-blur img {
+  position: relative;
+  z-index: 1;  /* Ensure the image is above the pseudo-element */
 }
