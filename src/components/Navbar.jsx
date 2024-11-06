@@ -96,11 +96,11 @@ const Navbar = () => {
               </button>
             </div>
           </div>
-          <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
+          <div className={`relative w-12 h-12 rounded-full ${isHovering ? 'border-4 border-transparent hover-border-blur' : ''} mr-4`} onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
             <img
               src={profilePicture}
               alt={fullName}
-              className={`w-12 h-12 rounded-full object-cover cursor-pointer mr-4 ${isHovering ? 'shadow-lg shadow-gray-400' : ''}`}
+              className={`w-12 h-12 rounded-full object-cover cursor-pointer mr-4`}
             />
           <ProfileModal isHovering={isHovering} />
           
