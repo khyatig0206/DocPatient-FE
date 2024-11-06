@@ -34,8 +34,8 @@ const Login = () => {
     };
 
     return (
-        <section className="flex items-center justify-center min-h-screen bg-gray-100">
-            <div className="bg-white shadow-lg mt-1 mb-1 rounded-lg w-full max-w-md p-6 space-y-6">
+        <section className="flex items-center justify-center bg-gray-100">
+            <div className="bg-white shadow-lg rounded-lg w-full max-w-md p-6 my-24 space-y-6">
                 <h2 className="text-2xl font-semibold text-center text-mycolor">Login</h2>
                 <form onSubmit={handleSubmit} className="space-y-4">
                     <input
@@ -43,7 +43,7 @@ const Login = () => {
                         name="username"
                         placeholder="Username"
                         onChange={handleChange}
-                        className="input-field w-full p-2 border border-gray-300 rounded"
+                        className="input-field w-full p-2 border border-gray-300 rounded outline-mycolor"
                         required
                     />
                     <input
@@ -51,7 +51,7 @@ const Login = () => {
                         name="password"
                         placeholder="Password"
                         onChange={handleChange}
-                        className="input-field w-full p-2 border border-gray-300 rounded"
+                        className="input-field w-full p-2 border border-gray-300 rounded outline-mycolor"
                         required
                     />
                     <button type="submit" className="w-full py-2 bg-mycolor text-white rounded-lg hover:bg-buttoncolor2">
