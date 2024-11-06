@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
 
 const DoctorsPage = () => {
@@ -10,6 +11,12 @@ const DoctorsPage = () => {
   const [page, setPage] = useState(0);
   const [totalCount, setTotalCount] = useState(0);
   const postsPerPage = 6;
+  const navigate = useNavigate();
+
+  const handleBookAppointment = (doctorId) => {
+    // Navigating to AppointmentBookingPage with doctorId as URL parameter
+    navigate(`/book-appointment/${doctorId}`);
+  };
 
   useEffect(() => {
     const fetchDoctors = async () => {
@@ -110,7 +117,7 @@ const DoctorsPage = () => {
                 className="w-28 h-28 rounded-full object-contain"
                 />
             </div>
-                <div className="px-2 pb-2">
+                <div className="px-3 pb-2">
                   <h2 className="text-xl font-semibold">Dr. {doctor.profile.user.first_name} {doctor.profile.user.last_name}</h2>
                   <span className="text-gray-500 text-sm">{doctor.establishment_name}</span>
                   <br></br>
@@ -120,7 +127,14 @@ const DoctorsPage = () => {
                   <p className="text-gray-700 text-sm">
                     Specializations: {doctor.categories.map((cat) => cat.name).join(', ')}
                   </p>
-                  
+                  <div className="flex pb-2 justify-center">
+                  <button
+                    onClick={() => handleBookAppointment(doctor.profile.user.id)} // Passing doctor.id in the URL
+                    className=" px-4 py-2 bg-mycolor text-white rounded-md hover:bg-buttoncolor2"
+                    >
+                    Book Appointment
+                    </button>
+                    </div>
                 </div>
               </div>
             ))}

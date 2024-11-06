@@ -3,7 +3,7 @@ import Homepage from './pages/Homepage';
 import Register from './pages/Registerpage';
 import Footer from './components/Footer';
 import BlogPage from './pages/BlogPostsall';
-
+import AppointmentBookingPage from './pages/Appointment';
 import GoogleCalendarCallback from './components/GoogleCalendarCallback'
 import Login from './pages/Loginpage'
 import DoctorsPage from './pages/DoctorsPage'
@@ -21,6 +21,7 @@ function App() {
         <Route path="/auth/google/callback" element={<GoogleCalendarCallback />} /> 
         <Route path="/blogs" element={<BlogPage />} />
         <Route path="/doctors" element={<DoctorsPage/>}/>
+        <Route path="/book-appointment/:doctorId" element={<AppointmentBookingPage />} />
       </Routes>
       <Footer />
     </div>
