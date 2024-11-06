@@ -44,7 +44,7 @@ const PatientAppointments = () => {
               {/* Doctor's profile picture */}
               <div className="flex items-center mb-4">
                 <img
-                  src={appointment.doctor_profile}
+                  src={`${import.meta.env.VITE_BASE_URL}${appointment.doctor_profile}`}
                   alt="Doctor Profile"
                   className="w-16 h-16 rounded-full object-cover mr-4"
                 />
