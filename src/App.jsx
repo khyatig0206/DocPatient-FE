@@ -9,6 +9,7 @@ import Login from './pages/Loginpage'
 import DoctorsPage from './pages/DoctorsPage'
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
+import PatientAppointments from './pages/Appointmentlist';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
         <Route path="/blogs" element={<BlogPage />} />
         <Route path="/doctors" element={<DoctorsPage/>}/>
         <Route path="/book-appointment/:doctorId" element={<AppointmentBookingPage />} />
+        <Route path="/appointments" element={<PatientAppointments/>}/>
       </Routes>
       <Footer />
     </div>
