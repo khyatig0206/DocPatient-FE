@@ -11,6 +11,8 @@ const DoctorsPage = () => {
   const [page, setPage] = useState(0);
   const [totalCount, setTotalCount] = useState(0);
   const postsPerPage = 6;
+  const [isPatient, setIsPatient] = useState(true); 
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
   const navigate = useNavigate();
 
   const handleBookAppointment = (doctorId) => {
@@ -19,6 +21,12 @@ const DoctorsPage = () => {
   };
 
   useEffect(() => {
+    const token = window.localStorage.getItem('access_token');
+    if (token) {
+      setIsAuthenticated(true);}
+    const isPatientStored = localStorage.getItem('is_patient') === 'true';
+    setIsPatient(isPatientStored);
+
     const fetchDoctors = async () => {
       try {
         const categoryFilter = selectedCategories.length ? `&categories[]=${selectedCategories.join('&categories[]=')}` : '';
@@ -128,12 +136,14 @@ const DoctorsPage = () => {
                     Specializations: {doctor.categories.map((cat) => cat.name).join(', ')}
                   </p>
                   <div className="flex pb-2 justify-center">
+                    {isAuthenticated && isPatient && (
                   <button
                     onClick={() => handleBookAppointment(doctor.profile.user.id)} // Passing doctor.id in the URL
                     className=" px-4 py-2 bg-mycolor text-white rounded-md hover:bg-buttoncolor2"
                     >
                     Book Appointment
-                    </button>
+                    </button>)}
+
                     </div>
                 </div>
               </div>
