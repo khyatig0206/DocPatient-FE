@@ -175,7 +175,7 @@ const Register = () => {
                 },
             });
             window.alert("Registration successful!");
-            window.location.href = "/"; 
+            window.location.href = "/login"; 
             console.log(response.data);
         } catch (error) {
             if (error.response && error.response.data) {

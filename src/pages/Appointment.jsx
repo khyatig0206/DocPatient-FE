@@ -57,7 +57,7 @@ const AppointmentBookingPage = () => {
       );
   
       alert('Appointment booked successfully!');
-      navigate('/'); // Redirect to home page (or any other page)
+      navigate('/appointments'); // Redirect to home page (or any other page)
     } catch (error) {
       console.error(error);
       alert('Failed to book appointment');
