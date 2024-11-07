@@ -81,7 +81,6 @@ const Register = () => {
         if (!selectedCategories.some(selected => selected.id === category.id)) {
             const updatedSelectedCategories = [...selectedCategories, category];
             setSelectedCategories(updatedSelectedCategories);
-            // Update formData.categories as an array of IDs
             setFormData({ ...formData, categories: updatedSelectedCategories.map(c => c.id) });
         }
         setFilteredCategories(categories);

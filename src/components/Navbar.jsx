@@ -65,6 +65,9 @@ const Navbar = () => {
       <Link to="/" className="flex items-center no-underline text-white">
         <img src='/icon2.png' className='w-12 h-12 mr-2 ml-4' alt="Medi Logo" />
         <div className="text-lg md:text-xl font-bold">Medi</div>
+
+
+        
         
       </Link>
 

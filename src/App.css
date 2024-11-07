@@ -83,3 +83,11 @@ body::-webkit-scrollbar {
 .profileimg:hover {
   box-shadow: 0 0 10px 7px rgba(69, 69, 69, 0.3); /* Optional: Increase shadow on hover */
 }
+
+.swiper-pagination-bullet {
+  background-color: #008e76 !important; /* Default color */
+}
+
+.swiper-pagination-bullet-active {
+  background-color: #008e76 !important; /* Active dot color */
+}
