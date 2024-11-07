@@ -1,18 +1,24 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faPenToSquare } from '@fortawesome/free-solid-svg-icons';
 const BlogPage = () => {
   const [posts, setPosts] = useState([]);
   const [categories, setCategories] = useState([]);
   const [selectedCategories, setSelectedCategories] = useState([]);
   const [page, setPage] = useState(0);
   const [totalCount, setTotalCount] = useState(0);
+  const [isPatient, setIsPatient] = useState(true); 
+  
   const postsPerPage = 6;
 
   // Fetch blog posts and categories
   useEffect(() => {
     const fetchBlogPosts = async () => {
       try {
+        const isPatientStored = localStorage.getItem('is_patient') === 'true';
+        setIsPatient(isPatientStored);
         const categoryFilter = selectedCategories.length ? `&categories[]=${selectedCategories.join('&categories[]=')}` : '';
         const response = await axios.get(`${import.meta.env.VITE_BASE_URL}/filtered_blogposts/?offset=${page * postsPerPage}&limit=${postsPerPage}${categoryFilter}`);
         
@@ -75,6 +81,19 @@ const BlogPage = () => {
 
         {/* Blog Post Listing */}
         <div className="w-4/5 pl-4">
+        {!isPatient && 
+            <div className="flex items-center justify-between mb-3">
+            <div className="flex-1 flex items-center">
+            <span className="mr-2 text-mycolor text-xl"><FontAwesomeIcon icon={faPenToSquare} /></span> {/* Larger Icon with mycolor */}
+            <hr className="border-t-2 border-mycolor flex-1" />
+            </div>
+                <Link to="/create-blog">
+                <button className="bg-mycolor shadow-md text-white md:text-base sm:text-sm px-4 py-2 rounded hover:bg-buttoncolor2 transition-transform transform hover:scale-95 z-20 ml-4">
+                Create Blog
+                </button>
+                </Link>
+            </div>
+            }
           <div className="grid gap-3 pb-4 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {posts.map((post) => (
               <div key={post.id} className="bg-white shadow-md rounded-md overflow-hidden transition-transform transform cursor-pointer hover:scale-95 duration-300 z-10">

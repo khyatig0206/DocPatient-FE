@@ -30,7 +30,7 @@ const Homepage = () => {
         <img src={homeSvg} alt="Home illustration" className="w-full h-auto border-bottom" />
       </div>
     </div>
-    <BlogCard/>
+    <BlogCard />
     </>
   );
 };

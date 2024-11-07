@@ -40,7 +40,7 @@ const BlogCard = () => {
   };
 
   return (
-    <div className="flex flex-col items-center relative bg-buttoncolor2">
+    <div className="flex flex-col items-center relative bg-buttoncolor2 ">
       {/* Heading and View All button */}
       <div className="w-full flex justify-between items-center mb-4 px-4 mt-4 ">
         <h2 className="text-2xl font-bold text-gray-700">Recent Blog Posts</h2>

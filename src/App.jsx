@@ -10,6 +10,7 @@ import DoctorsPage from './pages/DoctorsPage'
 import './App.css';
 import { Routes, Route } from 'react-router-dom';
 import PatientAppointments from './pages/Appointmentlist';
+import BlogPostCreationPage from './pages/CreateBlog';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
         <Route path="/doctors" element={<DoctorsPage/>}/>
         <Route path="/book-appointment/:doctorId" element={<AppointmentBookingPage />} />
         <Route path="/appointments" element={<PatientAppointments/>}/>
+        <Route path="/create-blog" element={<BlogPostCreationPage/>}/>
       </Routes>
       <Footer />
     </div>
