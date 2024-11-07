@@ -8,8 +8,8 @@ import 'swiper/css/autoplay';
 import { Autoplay, Pagination } from 'swiper/modules'; 
 
 const BlogPostCreationPage = () => {
-  const userId = 12; 
-  //const userId = window.localStorage.getItem('user_id'); // Placeholder for user ID, replace with actual user ID from local storage or other sources
+  
+  const userId = window.localStorage.getItem('user_id');
   const navigate = useNavigate();
   
   const [blogData, setBlogData] = useState({
