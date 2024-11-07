@@ -12,6 +12,8 @@
 
 ![Screenshot_7-11-2024_205013_doc-patient-fe vercel app](https://github.com/user-attachments/assets/39805e03-b207-4417-b0d9-01a863351498)
 
+![Screenshot_7-11-2024_213711_doc-patient-fe vercel app](https://github.com/user-attachments/assets/ed264110-5f9b-4f13-8240-ec327efe0d33)
+
 ![Screenshot (161)](https://github.com/user-attachments/assets/a34f77ad-2a16-4e5b-8d3a-a4f86bbef30f)
 
 ![Screenshot_7-11-2024_205540_doc-patient-fe vercel app](https://github.com/user-attachments/assets/a003cac4-e9fd-4644-97b4-00d2e1505ad8)
