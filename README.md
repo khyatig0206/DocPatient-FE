@@ -1,3 +1,17 @@
+Here are the test credentials for login:
+
+**Doctor Account**  
+- **Username**: TestDoc  
+- **Password**: Test@0206  
+- **Email**: t87463962@gmail.com  
+
+**Patient Account**  
+- **Username**: Test  
+- **Password**: Test@0206  
+- **Email**: t22219349@gmail.com  
+
+Note: The password for both the Google account and Medi platform is the same (Test@0206). These credentials enable testing of both Google Calendar integration and Medi account functionalities for doctor and patient roles.
+
 ![Screenshot_7-11-2024_204017_doc-patient-fe vercel app](https://github.com/user-attachments/assets/6913f63f-618c-485d-abb7-a898f700b9f2)
 
 ![Screenshot (159)](https://github.com/user-attachments/assets/c19e62c9-1859-481d-b42a-06076b2a1b5f)
